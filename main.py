@@ -6,14 +6,15 @@ class Rotting_Oranges:
         self.Minutes = 0
 
     def Iterate(self):
-        i = 0
-        while i < len(self.Array):
-            j = 0
-            while j < len(self.Array):
-                if self.Array[i][j] == self.Rotten:
-                    self.Rot(i, j)
-                j += 1
-            i += 1
+        for _ in range(len(self.Array) + 1):
+            i = 0
+            while i < len(self.Array):
+                j = 0
+                while j < len(self.Array):
+                    if self.Array[i][j] == self.Rotten:
+                        self.Rot(i, j)
+                    j += 1
+                i += 1
         
         for Row in self.Array:
             for Orange in Row:
@@ -38,7 +39,7 @@ class Rotting_Oranges:
             Changes = True
         if Changes:
             self.Minutes += 1
-        
+
 
 Input = eval(input("Input: "))
 
